@@ -1,8 +1,13 @@
-/* =====================================================
-   KAMESHH V — NAVY BLUE MANGA PORTFOLIO
-   ===================================================== */
+/* =========================================================
+   Ꮶꭺꮇꭼꮪꮋꮋ Ꮩ — PREMIUM NAVY BLUE PORTFOLIO
+   ========================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Bangers&family=DM+Sans:wght@400;500;600;700&family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
+
+
+/* =========================
+   RESET
+========================= */
 
 * {
     margin: 0;
@@ -11,502 +16,48 @@
     scroll-behavior: smooth;
 }
 
-:root {
-    --navy-dark: #020b1c;
-    --navy: #06152e;
-    --navy-light: #0b2142;
-
-    --blue: #42a5ff;
-    --blue-bright: #69b7ff;
-    --blue-dark: #1476d4;
-
-    --white: #f5f8ff;
-    --text: #c9d5e8;
-    --muted: #8191aa;
-
-    --border: rgba(66, 165, 255, 0.35);
-    --card: rgba(7, 27, 56, 0.82);
-
-    --shadow: 0 15px 45px rgba(0, 0, 0, 0.35);
-}
-
 html {
-    background: var(--navy-dark);
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: "DM Sans", Arial, sans-serif;
+    font-family: "Inter", sans-serif;
+
     background:
         radial-gradient(
             circle at 80% 10%,
-            rgba(66, 165, 255, 0.12),
+            rgba(37, 99, 235, 0.12),
             transparent 30%
         ),
         linear-gradient(
             135deg,
-            #020817,
-            #06152e 55%,
-            #020b1c
+            #020817 0%,
+            #06152f 50%,
+            #020817 100%
         );
 
-    color: var(--white);
+    color: #f8fafc;
     line-height: 1.6;
+
     overflow-x: hidden;
 }
 
-/* =====================================================
-   MANGA BACKGROUND
-   ===================================================== */
 
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
+/* =========================
+   COLORS
+========================= */
 
-    background-image:
-        linear-gradient(
-            135deg,
-            transparent 48%,
-            rgba(66,165,255,0.035) 49%,
-            transparent 51%
-        );
+:root {
+    --navy-dark: #020817;
+    --navy: #06152f;
+    --navy-light: #0a2144;
 
-    background-size: 35px 35px;
-    pointer-events: none;
-    z-index: -1;
-}
+    --blue: #2563eb;
+    --blue-light: #60a5fa;
+    --blue-soft: #93c5fd;
 
-/* =====================================================
-   NAVBAR
-   ===================================================== */
+    --white: #f8fafc;
+    --text: #cbd5e1;
+    --muted: #94a3b8;
 
-header,
-nav {
-    background: rgba(2, 11, 28, 0.92);
-    backdrop-filter: blur(15px);
-
-    border-bottom: 1px solid var(--border);
-
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-nav {
-    min-height: 78px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 0 7%;
-}
-
-/* YOUR NAME */
-
-.logo,
-.logo a,
-nav .logo {
-    font-family: "Permanent Marker", cursive !important;
-
-    color: var(--white);
-
-    font-size: 30px;
-    font-weight: 700;
-
-    letter-spacing: 1px;
-
-    text-decoration: none;
-
-    white-space: nowrap;
-
-    text-shadow:
-        0 0 12px rgba(66,165,255,0.25);
-}
-
-/* BLUE V */
-
-.logo::first-letter {
-    color: var(--white);
-}
-
-nav ul {
-    display: flex;
-    align-items: center;
-    gap: 35px;
-
-    list-style: none;
-}
-
-nav ul li a {
-    color: var(--text);
-
-    text-decoration: none;
-
-    font-size: 16px;
-    font-weight: 600;
-
-    position: relative;
-
-    transition: 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: var(--blue);
-}
-
-nav ul li a::after {
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-    bottom: -8px;
-
-    width: 0;
-    height: 2px;
-
-    background: var(--blue);
-
-    transition: 0.3s ease;
-}
-
-nav ul li a:hover::after {
-    width: 100%;
-}
-
-/* =====================================================
-   HERO
-   ===================================================== */
-
-.hero {
-    min-height: 90vh;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 80px 7%;
-
-    position: relative;
-
-    overflow: hidden;
-}
-
-.hero::after {
-    content: "";
-
-    position: absolute;
-
-    width: 500px;
-    height: 500px;
-
-    right: -180px;
-    top: 100px;
-
-    background: radial-gradient(
-        circle,
-        rgba(66,165,255,0.18),
-        transparent 70%
-    );
-
-    pointer-events: none;
-}
-
-/* HERO TEXT */
-
-.hero-content {
-    max-width: 650px;
-
-    position: relative;
-    z-index: 2;
-}
-
-.hero-content .small-title {
-    color: var(--blue);
-
-    font-size: 16px;
-
-    font-weight: 700;
-
-    letter-spacing: 6px;
-
-    text-transform: uppercase;
-
-    margin-bottom: 15px;
-}
-
-.hero-content h1 {
-    font-family: "Permanent Marker", cursive;
-
-    font-size: clamp(55px, 8vw, 105px);
-
-    line-height: 0.95;
-
-    color: var(--white);
-
-    margin-bottom: 25px;
-
-    text-shadow:
-        5px 5px 0 rgba(20,118,212,0.45);
-
-    letter-spacing: 2px;
-}
-
-/* SPECIAL NAME */
-
-.hero-name {
-    font-family: "Permanent Marker", cursive !important;
-
-    color: var(--white);
-
-    font-size: clamp(45px, 7vw, 90px);
-
-    letter-spacing: 2px;
-}
-
-.hero-name span {
-    color: var(--blue);
-}
-
-.hero-content h2 {
-    font-size: 18px;
-
-    text-transform: uppercase;
-
-    letter-spacing: 5px;
-
-    color: var(--text);
-
-    margin-bottom: 20px;
-}
-
-.hero-content h2 span {
-    color: var(--blue);
-}
-
-.hero-content p {
-    max-width: 580px;
-
-    font-size: 18px;
-
-    color: var(--text);
-
-    margin-bottom: 35px;
-}
-
-/* =====================================================
-   BUTTONS
-   ===================================================== */
-
-.hero-buttons {
-    display: flex;
-    gap: 15px;
-
-    flex-wrap: wrap;
-}
-
-.btn {
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    padding: 13px 25px;
-
-    border-radius: 30px;
-
-    text-decoration: none;
-
-    font-size: 15px;
-    font-weight: 700;
-
-    transition: 0.3s ease;
-
-    border: 1px solid var(--blue);
-}
-
-.btn-primary {
-    background: var(--blue);
-
-    color: #001027;
-
-    box-shadow:
-        0 8px 25px rgba(66,165,255,0.25);
-}
-
-.btn-primary:hover {
-    background: var(--blue-bright);
-
-    transform: translateY(-3px);
-}
-
-.btn-outline {
-    color: var(--blue);
-
-    background: transparent;
-}
-
-.btn-outline:hover {
-    background: var(--blue);
-
-    color: #001027;
-
-    transform: translateY(-3px);
-}
-
-/* =====================================================
-   MANGA DECORATION
-   ===================================================== */
-
-.manga-line {
-    width: 70px;
-    height: 3px;
-
-    background: var(--blue);
-
-    margin: 15px 0 25px;
-
-    box-shadow:
-        0 0 12px rgba(66,165,255,0.5);
-}
-
-.manga-text {
-    font-family: "Permanent Marker", cursive;
-
-    color: var(--blue);
-
-    font-size: 18px;
-}
-
-/* =====================================================
-   SECTIONS
-   ===================================================== */
-
-section {
-    padding: 100px 7%;
-
-    position: relative;
-}
-
-.section-title {
-    text-align: center;
-
-    margin-bottom: 55px;
-}
-
-.section-title small {
-    display: block;
-
-    color: var(--blue);
-
-    letter-spacing: 5px;
-
-    font-weight: 700;
-
-    margin-bottom: 10px;
-}
-
-.section-title h2 {
-    font-family: "Permanent Marker", cursive;
-
-    font-size: 45px;
-
-    color: var(--white);
-}
-
-.section-title h2 span {
-    color: var(--blue);
-}
-
-/* =====================================================
-   ABOUT
-   ===================================================== */
-
-.about {
-    display: grid;
-
-    grid-template-columns: 0.9fr 1.1fr;
-
-    gap: 70px;
-
-    align-items: center;
-}
-
-.about-image {
-    min-height: 400px;
-
-    border: 1px solid var(--border);
-
-    border-radius: 20px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(66,165,255,0.12),
-            rgba(2,11,28,0.9)
-        );
-
-    box-shadow: var(--shadow);
-
-    position: relative;
-
-    overflow: hidden;
-}
-
-.about-image::before {
-    content: "KAMESHH V";
-
-    position: absolute;
-
-    left: 25px;
-    bottom: 20px;
-
-    font-family: "Permanent Marker", cursive;
-
-    color: rgba(66,165,255,0.7);
-
-    font-size: 28px;
-
-    transform: rotate(-5deg);
-}
-
-.about-content h3 {
-    font-family: "Permanent Marker", cursive;
-
-    font-size: 40px;
-
-    margin-bottom: 20px;
-}
-
-.about-content h3 span {
-    color: var(--blue);
-}
-
-.about-content p {
-    color: var(--text);
-
-    font-size: 17px;
-
-    margin-bottom: 25px;
-}
-
-/* =====================================================
-   SKILLS
-   ===================================================== */
-
-.skills-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(auto-fit, minmax(170px, 1fr));
-
-    gap: 20px;
-}
-
-.skill-card {
-    background: var(--card);
-
-    border: 1px solid var(--border);
-
-    border
+    --border: rgba(96, 165, 250, 0.20
