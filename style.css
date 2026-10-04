@@ -1,6 +1,6 @@
-/* =====================================================
+/* =========================================
    GENERAL
-===================================================== */
+========================================= */
 
 * {
     margin: 0;
@@ -11,118 +11,76 @@
 
 :root {
     --navy: #001f3f;
-    --navy-deep: #00152e;
-    --blue: #003d7a;
-    --sky: #7db7ff;
-    --paper: #f4f7fb;
-
-    --name-font:
-        "Segoe UI Historic",
-        "Segoe UI Symbol",
-        "Noto Sans Cherokee",
-        Georgia,
-        serif;
-
-    --code-font:
-        "JetBrains Mono",
-        "Fira Code",
-        Consolas,
-        monospace;
+    --navy-dark: #00152e;
+    --blue: #003d73;
+    --light-blue: #0b5fa5;
+    --white: #ffffff;
+    --light: #f4f8fc;
+    --text: #26384a;
 }
 
 body {
     font-family: Georgia, "Times New Roman", serif;
-    background: var(--paper);
-    color: #172033;
-    line-height: 1.7;
-}
-
-a:focus-visible,
-.btn:focus-visible {
-    outline: 3px solid var(--sky);
-    outline-offset: 3px;
+    background: var(--light);
+    color: var(--text);
+    line-height: 1.6;
 }
 
 
-/* =====================================================
+/* =========================================
    NAVIGATION
-===================================================== */
+========================================= */
 
 header {
+    background: var(--navy-dark);
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
 }
 
 .navbar {
-    padding: 18px 8%;
+    max-width: 1150px;
+    margin: auto;
+    padding: 18px 25px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    background: var(--navy);
-
-    border-bottom: 1px solid rgba(125, 183, 255, 0.25);
-
-    box-shadow:
-        0 3px 15px rgba(0, 0, 0, 0.25);
 }
-
-
-/* YOUR NAME */
 
 .logo {
-    color: #fff;
-    text-decoration: none;
-
-    font-family: var(--name-font);
+    color: white;
     font-size: 25px;
     font-weight: bold;
-
     letter-spacing: 1px;
-
-    text-shadow:
-        0 0 10px rgba(125, 183, 255, 0.35);
-
-    transition: 0.3s ease;
+    font-family: Georgia, "Times New Roman", serif;
 }
-
-.logo:hover {
-    color: var(--sky);
-
-    text-shadow:
-        0 0 18px rgba(125, 183, 255, 0.7);
-}
-
-
-/* NAVIGATION LINKS */
 
 .nav-links {
+    list-style: none;
     display: flex;
     gap: 25px;
 }
 
 .nav-links a {
-    color: #fff;
+    color: white;
     text-decoration: none;
-
-    font-family: var(--code-font);
-    font-size: 14px;
-
-    transition: color 0.3s;
+    font-size: 16px;
+    transition: 0.3s;
 }
 
 .nav-links a:hover {
-    color: var(--sky);
+    color: #7ec8ff;
 }
 
 
-/* =====================================================
-   HOME
-===================================================== */
+/* =========================================
+   HERO
+========================================= */
 
-.home {
-    min-height: 92vh;
+.hero {
+    min-height: 90vh;
 
     display: flex;
     justify-content: center;
@@ -130,197 +88,118 @@ header {
 
     text-align: center;
 
-    padding: 60px 20px;
-
     background:
         linear-gradient(
             135deg,
-            var(--navy-deep),
-            #002f66,
-            var(--navy)
+            #00152e,
+            #003d73,
+            #001f3f
         );
 
-    color: #fff;
+    color: white;
+    padding: 60px 20px;
 }
 
-.home-content {
-    max-width: 850px;
+.hero-content {
+    max-width: 800px;
 }
 
-.welcome {
-    font-family: var(--code-font);
-
-    font-size: 15px;
-    letter-spacing: 2px;
-
-    margin-bottom: 10px;
-
-    color: #b9d8ff;
+.small-text {
+    font-size: 14px;
+    letter-spacing: 4px;
+    color: #9ed8ff;
+    margin-bottom: 15px;
 }
 
+.hero h1 {
+    font-size: 38px;
+    font-weight: normal;
+}
 
-/* BIG NAME */
+.hero h2 {
+    font-family: Georgia, "Times New Roman", serif;
 
-.home h1 {
-    font-family: var(--name-font);
+    font-size: clamp(42px, 8vw, 75px);
 
-    font-size: 58px;
-    line-height: 1.2;
+    margin: 5px 0 20px;
 
-    margin-bottom: 10px;
-
-    letter-spacing: 1px;
+    color: white;
 
     text-shadow:
-        0 0 15px rgba(125, 183, 255, 0.3);
+        0 0 10px rgba(255,255,255,0.15);
+
+    letter-spacing: 2px;
 }
 
-.home h2 {
-    font-family: var(--code-font);
+.intro {
+    max-width: 650px;
+    margin: auto;
 
-    font-weight: 400;
-    font-size: 22px;
-
-    margin-bottom: 20px;
-
-    color: #d9eaff;
-}
-
-.home p:not(.welcome) {
     font-size: 18px;
-
-    margin-bottom: 30px;
-
-    color: #edf5ff;
+    color: #d9ecfa;
 }
 
 
-/* =====================================================
-   BUTTON
-===================================================== */
+/* =========================================
+   BUTTONS
+========================================= */
+
+.buttons {
+    margin-top: 30px;
+
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
 
 .btn {
     display: inline-block;
 
-    padding: 13px 30px;
-
-    background: #fff;
-    color: var(--navy);
-
-    text-decoration: none;
+    padding: 12px 28px;
 
     border-radius: 30px;
 
+    text-decoration: none;
+
+    font-size: 16px;
     font-weight: bold;
 
     transition: 0.3s;
 }
 
-.btn:hover {
-    background: var(--sky);
+.github-btn {
+    background: white;
+    color: var(--navy);
+}
 
+.github-btn:hover {
     transform: translateY(-3px);
+    background: #dceeff;
+}
+
+.email-btn {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.email-btn:hover {
+    transform: translateY(-3px);
+    background: white;
+    color: var(--navy);
 }
 
 
-/* =====================================================
-   CODE WINDOW
-===================================================== */
-
-.code-window {
-    margin: 45px auto 0;
-
-    max-width: 480px;
-
-    text-align: left;
-
-    background: #0a1a2f;
-
-    border:
-        1px solid rgba(125, 183, 255, 0.3);
-
-    border-radius: 12px;
-
-    overflow: hidden;
-
-    box-shadow:
-        0 20px 40px rgba(0, 0, 0, 0.35);
-}
-
-.code-bar {
-    display: flex;
-
-    align-items: center;
-
-    gap: 7px;
-
-    padding: 10px 14px;
-
-    background: #10294a;
-}
-
-.code-bar i {
-    width: 11px;
-    height: 11px;
-
-    border-radius: 50%;
-
-    background: #5b7aa3;
-}
-
-.code-bar span {
-    margin-left: 10px;
-
-    font-family: var(--code-font);
-
-    font-size: 12px;
-
-    color: #9fbfe6;
-}
-
-.code-window pre {
-    padding: 18px 20px;
-
-    overflow-x: auto;
-
-    font-family: var(--code-font);
-
-    font-size: 14px;
-
-    line-height: 1.7;
-
-    color: #d9eaff;
-}
-
-.code-window .k {
-    color: #ff9e64;
-}
-
-.code-window .v {
-    color: var(--sky);
-}
-
-.code-window .s {
-    color: #9ece6a;
-
-    font-family:
-        var(--name-font),
-        var(--code-font);
-}
-
-
-/* =====================================================
-   COMMON SECTIONS
-===================================================== */
+/* =========================================
+   SECTIONS
+========================================= */
 
 .section {
-    padding: 90px 8%;
-}
-
-.container {
     max-width: 1100px;
-
     margin: auto;
+    padding: 80px 25px;
 }
 
 .section-title {
@@ -328,9 +207,11 @@ header {
 
     font-size: 36px;
 
-    margin-bottom: 45px;
-
     color: var(--navy);
+
+    margin-bottom: 40px;
+
+    position: relative;
 }
 
 .section-title::after {
@@ -338,427 +219,203 @@ header {
 
     display: block;
 
-    width: 65px;
-    height: 4px;
+    width: 60px;
+    height: 3px;
 
-    background: var(--blue);
+    background: var(--light-blue);
 
     margin: 12px auto;
-
-    border-radius: 10px;
 }
 
 
-/* =====================================================
-   ABOUT
-===================================================== */
+/* =========================================
+   ABOUT CARD
+========================================= */
 
-.about-box {
-    max-width: 760px;
+.card {
+    background: white;
 
+    max-width: 800px;
     margin: auto;
 
-    background: #fff;
-
-    padding: 40px;
+    padding: 35px;
 
     border-radius: 15px;
 
-    border-top:
-        4px solid var(--blue);
+    box-shadow: 0 8px 25px rgba(0, 31, 63, 0.1);
 
-    box-shadow:
-        0 10px 30px rgba(0, 31, 63, 0.1);
+    border-left: 5px solid var(--navy);
 }
 
-.about-box p {
-    margin-bottom: 18px;
+.card h3 {
+    color: var(--navy);
 
-    font-size: 17px;
-}
+    font-size: 28px;
 
-.about-box p:last-child {
-    margin-bottom: 0;
+    margin-bottom: 15px;
 }
 
 
-/* =====================================================
+/* =========================================
    SKILLS
-===================================================== */
+========================================= */
 
-.skills-section {
-    background: #eaf2fb;
-}
-
-.skills-grid {
+.skills-container {
     display: grid;
 
     grid-template-columns:
-        repeat(4, 1fr);
+        repeat(auto-fit, minmax(220px, 1fr));
 
-    gap: 25px;
+    gap: 20px;
 }
 
 .skill-card {
-    background: #fff;
+    background: white;
 
-    padding: 30px 20px;
+    padding: 30px;
 
     text-align: center;
 
     border-radius: 15px;
 
-    border-bottom:
-        4px solid var(--blue);
+    border-top: 4px solid var(--navy);
 
     box-shadow:
-        0 8px 25px rgba(0, 31, 63, 0.08);
+        0 7px 20px rgba(0, 31, 63, 0.1);
 
-    transition: transform 0.3s;
+    transition: 0.3s;
 }
 
 .skill-card:hover {
-    transform: translateY(-6px);
-}
-
-.skill-icon {
-    width: 70px;
-    height: 70px;
-
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    margin: 0 auto 20px;
-
-    border-radius: 50%;
-
-    background: var(--navy);
-
-    color: #fff;
-
-    font-family: var(--code-font);
-
-    font-size: 14px;
-
-    font-weight: bold;
+    transform: translateY(-7px);
 }
 
 .skill-card h3 {
     color: var(--navy);
-
-    margin-bottom: 8px;
-}
-
-.skill-card p {
-    font-size: 15px;
+    margin-bottom: 10px;
 }
 
 
-/* =====================================================
+/* =========================================
    PROJECTS
-===================================================== */
+========================================= */
 
-.projects-grid {
+.projects-container {
     display: grid;
 
     grid-template-columns:
-        repeat(3, 1fr);
+        repeat(auto-fit, minmax(280px, 1fr));
 
     gap: 25px;
 }
 
 .project-card {
-    background: #fff;
+    background: white;
 
-    padding: 32px 25px;
+    padding: 30px;
 
     border-radius: 15px;
 
-    border-left:
-        5px solid var(--blue);
-
     box-shadow:
-        0 8px 25px rgba(0, 31, 63, 0.08);
+        0 7px 20px rgba(0, 31, 63, 0.1);
 
-    transition: transform 0.3s;
+    border-left: 4px solid var(--light-blue);
+
+    transition: 0.3s;
 }
 
 .project-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-7px);
 }
 
 .project-card h3 {
     color: var(--navy);
 
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 
-    font-size: 21px;
-}
-
-.project-card p {
-    font-size: 15px;
-
-    margin-bottom: 16px;
-}
-
-.tags {
-    display: inline-block;
-
-    padding: 3px 10px;
-
-    border-radius: 6px;
-
-    background: #eaf2fb;
-
-    color: var(--blue);
-
-    font-family: var(--code-font);
-
-    font-size: 12px;
+    font-size: 24px;
 }
 
 
-/* =====================================================
-   CONTACT ME
-===================================================== */
+/* =========================================
+   CONTACT
+========================================= */
 
-.contact-section {
+.contact {
     text-align: center;
 
-    background:
-        linear-gradient(
-            135deg,
-            #dfeaf5,
-            #eef5fc
-        );
+    background: #eaf3fb;
+
+    max-width: 100%;
+
+    margin-top: 30px;
 }
 
-.contact-text {
-    margin-bottom: 30px;
-
-    font-size: 17px;
-
-    color: #34445a;
-}
-
-.contact-links {
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    flex-wrap: wrap;
-
-    gap: 18px;
+.contact p {
+    font-size: 18px;
 }
 
 
-/* GMAIL + GITHUB */
-
-.email,
-.github {
-    position: relative;
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 10px;
-
-    min-width: 210px;
-
-    padding: 15px 25px;
-
-    border-radius: 14px;
-
-    font-family: var(--code-font);
-
-    font-size: 14px;
-
-    font-weight: bold;
-
-    text-decoration: none;
-
-    overflow: hidden;
-
-    transition: all 0.35s ease;
-}
-
-
-/* GMAIL */
-
-.email {
-    background: #fff;
-
-    color: var(--navy);
-
-    border:
-        2px solid var(--blue);
-
-    box-shadow:
-        0 8px 20px rgba(0, 31, 63, 0.12);
-}
-
-.email:hover {
-    background: var(--navy);
-
-    color: #fff;
-
-    transform: translateY(-5px);
-
-    box-shadow:
-        0 12px 28px rgba(0, 31, 63, 0.25);
-}
-
-
-/* GITHUB */
-
-.github {
-    background: var(--navy);
-
-    color: #fff;
-
-    border:
-        2px solid var(--navy);
-
-    box-shadow:
-        0 8px 20px rgba(0, 31, 63, 0.18);
-}
-
-.github:hover {
-    background: #fff;
-
-    color: var(--navy);
-
-    transform: translateY(-5px);
-
-    box-shadow:
-        0 12px 28px rgba(0, 31, 63, 0.25);
-}
-
-
-/* CONTACT ICONS */
-
-.contact-icon {
-    font-size: 20px;
-
-    font-family: Arial, sans-serif;
-}
-
-
-/* =====================================================
+/* =========================================
    FOOTER
-===================================================== */
+========================================= */
 
 footer {
-    padding: 25px;
+    background: var(--navy-dark);
+
+    color: white;
 
     text-align: center;
 
-    background: var(--navy-deep);
+    padding: 25px;
 
-    color: #fff;
-
-    font-size: 14px;
+    font-size: 15px;
 }
 
 
-/* =====================================================
-   RESPONSIVE
-===================================================== */
+/* =========================================
+   MOBILE
+========================================= */
 
-@media (max-width: 900px) {
-
-    .skills-grid,
-    .projects-grid {
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
-}
-
-
-@media (max-width: 650px) {
+@media (max-width: 700px) {
 
     .navbar {
         flex-direction: column;
-
-        gap: 12px;
-
-        padding: 16px 5%;
-    }
-
-    .logo {
-        font-size: 22px;
+        gap: 15px;
     }
 
     .nav-links {
-        gap: 14px;
-
+        gap: 12px;
         flex-wrap: wrap;
-
         justify-content: center;
     }
 
-    .home {
-        min-height: 90vh;
+    .nav-links a {
+        font-size: 14px;
     }
 
-    .home h1 {
-        font-size: 36px;
+    .hero {
+        min-height: 85vh;
     }
 
-    .home h2 {
-        font-size: 18px;
+    .hero h1 {
+        font-size: 30px;
     }
 
-    .home p:not(.welcome) {
+    .hero h2 {
+        font-size: 42px;
+    }
+
+    .intro {
         font-size: 16px;
     }
 
-    .code-window pre {
-        font-size: 12px;
-    }
-
     .section {
-        padding: 65px 6%;
+        padding: 60px 20px;
     }
 
     .section-title {
-        font-size: 28px;
+        font-size: 30px;
     }
 
-    .skills-grid,
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .about-box {
-        padding: 25px;
-    }
-
-    .email,
-    .github {
-        width: 100%;
-
-        max-width: 320px;
-    }
-}
-
-
-/* =====================================================
-   REDUCED MOTION
-===================================================== */
-
-@media (prefers-reduced-motion: reduce) {
-
-    * {
-        scroll-behavior: auto;
-
-        transition: none !important;
-    }
 }
