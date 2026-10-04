@@ -1,14 +1,8 @@
-/* =====================================================
-   KAMESHH V — PORTFOLIO STYLE
-   Dark Premium + Red Accent
-===================================================== */
+/* =========================================
+   GENERAL
+========================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
-
-
-/* =====================================================
-   1. RESET / GENERAL
-===================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 * {
     margin: 0;
@@ -17,40 +11,506 @@
     scroll-behavior: smooth;
 }
 
-html {
-    scroll-behavior: smooth;
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1e3a8a;
+    --navy: #020617;
+    --navy-light: #0f172a;
+
+    --background: #f8fafc;
+    --card: #ffffff;
+
+    --text: #1e293b;
+    --text-light: #64748b;
+
+    --white: #ffffff;
 }
+
+
+/* =========================================
+   BODY
+========================================= */
 
 body {
-    font-family: "DM Sans", sans-serif;
-    background: #08090b;
-    color: #f5f5f5;
+    font-family: 'Poppins', sans-serif;
+    background: var(--background);
+    color: var(--text);
     line-height: 1.6;
-    overflow-x: hidden;
-}
-
-:root {
-    --background: #08090b;
-    --background-light: #0d1017;
-
-    --white: #f5f5f5;
-    --text: #d0d0d5;
-    --muted: #92939a;
-
-    --red: #d9364f;
-    --red-light: #ed5267;
-    --red-dark: #a82439;
-
-    --card: #101217;
-    --border: rgba(255, 255, 255, 0.10);
-
-    --shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
 }
 
 
-/* =====================================================
-   2. NAVIGATION
-===================================================== */
+/* =========================================
+   NAVIGATION
+========================================= */
 
 header {
+    background: var(--navy);
     position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.navbar {
+    max-width: 1150px;
+    margin: auto;
+
+    padding: 18px 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* YOUR NAME */
+
+.logo {
+    font-family: 'Poppins', sans-serif;
+
+    color: var(--white);
+
+    font-size: 25px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+/* NAV LINKS */
+
+.nav-links {
+    list-style: none;
+
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #60a5fa;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    min-height: 90vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 60px 20px;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            #2563eb 0%,
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #020617,
+            #0f172a,
+            #172554
+        );
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.small-text {
+    font-size: 14px;
+
+    letter-spacing: 4px;
+
+    color: #93c5fd;
+
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 38px;
+
+    font-weight: 400;
+}
+
+
+/* YOUR NAME IN HERO */
+
+.hero h2 {
+    font-family: 'Poppins', sans-serif;
+
+    font-size: clamp(42px, 8vw, 75px);
+
+    font-weight: 700;
+
+    margin: 5px 0 20px;
+
+    color: #ffffff;
+
+    letter-spacing: 2px;
+
+    text-shadow:
+        0 0 20px rgba(96, 165, 250, 0.4);
+}
+
+.intro {
+    max-width: 650px;
+
+    margin: auto;
+
+    font-size: 17px;
+
+    color: #cbd5e1;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.buttons {
+    margin-top: 30px;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+
+    padding: 12px 28px;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+
+/* GITHUB */
+
+.github-btn {
+    background: var(--primary);
+
+    color: white;
+
+    box-shadow:
+        0 5px 20px rgba(37, 99, 235, 0.3);
+}
+
+.github-btn:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-3px);
+}
+
+
+/* EMAIL */
+
+.email-btn {
+    background: transparent;
+
+    color: white;
+
+    border: 2px solid #60a5fa;
+}
+
+.email-btn:hover {
+    background: #2563eb;
+
+    border-color: #2563eb;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   SECTIONS
+========================================= */
+
+.section {
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 80px 25px;
+}
+
+.section-title {
+    text-align: center;
+
+    font-size: 35px;
+
+    color: var(--navy);
+
+    margin-bottom: 40px;
+
+    font-weight: 700;
+}
+
+.section-title::after {
+    content: "";
+
+    display: block;
+
+    width: 65px;
+
+    height: 4px;
+
+    background: var(--primary);
+
+    border-radius: 5px;
+
+    margin: 12px auto;
+}
+
+
+/* =========================================
+   ABOUT
+========================================= */
+
+.card {
+    background: var(--card);
+
+    max-width: 800px;
+
+    margin: auto;
+
+    padding: 35px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.08);
+
+    border-left: 5px solid var(--primary);
+}
+
+.card h3 {
+    color: var(--primary-dark);
+
+    font-size: 26px;
+
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: var(--text-light);
+}
+
+
+/* =========================================
+   SKILLS
+========================================= */
+
+.skills-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 20px;
+}
+
+.skill-card {
+    background: var(--card);
+
+    padding: 30px;
+
+    text-align: center;
+
+    border-radius: 18px;
+
+    border-top: 4px solid var(--primary);
+
+    box-shadow:
+        0 10px 25px rgba(15, 23, 42, 0.08);
+
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 15px 35px rgba(37, 99, 235, 0.15);
+}
+
+.skill-card h3 {
+    color: var(--primary-dark);
+
+    margin-bottom: 10px;
+}
+
+.skill-card p {
+    color: var(--text-light);
+}
+
+
+/* =========================================
+   PROJECTS
+========================================= */
+
+.projects-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 25px;
+}
+
+.project-card {
+    background: var(--card);
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 25px rgba(15, 23, 42, 0.08);
+
+    border-left: 5px solid var(--primary);
+
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+}
+
+.project-card h3 {
+    color: var(--primary-dark);
+
+    margin-bottom: 12px;
+
+    font-size: 23px;
+}
+
+.project-card p {
+    color: var(--text-light);
+}
+
+
+/* =========================================
+   CONTACT
+========================================= */
+
+.contact {
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eff6ff,
+            #dbeafe
+        );
+
+    max-width: 100%;
+
+    margin-top: 30px;
+}
+
+.contact p {
+    font-size: 17px;
+
+    color: var(--text-light);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    background: var(--navy);
+
+    color: white;
+
+    text-align: center;
+
+    padding: 25px;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 12px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+    .hero {
+        min-height: 85vh;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero h2 {
+        font-size: 42px;
+    }
+
+    .intro {
+        font-size: 15px;
+    }
+
+    .section {
+        padding: 60px 20px;
+    }
+
+    .section-title {
+        font-size: 30px;
+    }
+}
