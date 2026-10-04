@@ -1,13 +1,13 @@
 /* =====================================================
-   KAMESHH V — PREMIUM PORTFOLIO
-   Dark Navy + Lavender
+   KAMESHH V — PORTFOLIO STYLE
+   Dark Premium + Red Accent
 ===================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
 
 
 /* =====================================================
-   RESET
+   1. RESET / GENERAL
 ===================================================== */
 
 * {
@@ -23,354 +23,34 @@ html {
 
 body {
     font-family: "DM Sans", sans-serif;
-    background: #080b12;
-    color: #ffffff;
+    background: #08090b;
+    color: #f5f5f5;
     line-height: 1.6;
     overflow-x: hidden;
 }
 
-
-/* =====================================================
-   VARIABLES
-===================================================== */
-
 :root {
-    --navy: #080b12;
-    --navy-2: #0d1320;
-    --navy-3: #111a2b;
+    --background: #08090b;
+    --background-light: #0d1017;
 
-    --lavender: #b79bdd;
-    --lavender-light: #d8c5f2;
-    --purple: #9270c7;
+    --white: #f5f5f5;
+    --text: #d0d0d5;
+    --muted: #92939a;
 
-    --white: #ffffff;
-    --text: #eeeeF3;
-    --muted: #a4a5ad;
+    --red: #d9364f;
+    --red-light: #ed5267;
+    --red-dark: #a82439;
 
-    --border: rgba(183, 155, 221, 0.18);
+    --card: #101217;
+    --border: rgba(255, 255, 255, 0.10);
 
-    --shadow:
-        0 20px 60px rgba(0, 0, 0, 0.35);
+    --shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
 }
 
 
 /* =====================================================
-   NAVBAR
+   2. NAVIGATION
 ===================================================== */
 
 header {
     position: sticky;
-    top: 0;
-    z-index: 1000;
-
-    width: 100%;
-
-    background: rgba(8, 11, 18, 0.92);
-    backdrop-filter: blur(18px);
-
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-nav {
-    width: 90%;
-    max-width: 1200px;
-
-    min-height: 78px;
-
-    margin: auto;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 30px;
-}
-
-
-/* =====================================================
-   LOGO
-===================================================== */
-
-.logo,
-nav h1,
-nav .logo {
-    font-family: "Playfair Display", serif;
-
-    color: var(--white);
-
-    font-size: 28px;
-    font-weight: 700;
-
-    letter-spacing: 1px;
-
-    text-decoration: none;
-
-    white-space: nowrap;
-}
-
-.logo span {
-    color: var(--lavender);
-}
-
-
-/* =====================================================
-   NAVIGATION LINKS
-===================================================== */
-
-nav ul {
-    display: flex;
-    align-items: center;
-
-    gap: 32px;
-
-    list-style: none;
-
-    margin-left: auto;
-}
-
-nav ul li a {
-    position: relative;
-
-    color: #d7d7dd;
-
-    text-decoration: none;
-
-    font-size: 16px;
-    font-weight: 500;
-
-    transition: 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: var(--lavender-light);
-}
-
-
-/* Animated underline */
-
-nav ul li a::after {
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-    bottom: -8px;
-
-    width: 0;
-    height: 2px;
-
-    background: var(--lavender);
-
-    transform: translateX(-50%);
-
-    transition: 0.3s ease;
-}
-
-nav ul li a:hover::after {
-    width: 100%;
-}
-
-
-/* =====================================================
-   HERO
-===================================================== */
-
-.hero {
-    min-height: calc(100vh - 78px);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 80px 7%;
-
-    text-align: center;
-
-    position: relative;
-
-    background:
-        radial-gradient(
-            circle at 50% 35%,
-            rgba(91, 65, 120, 0.16),
-            transparent 38%
-        ),
-        radial-gradient(
-            circle at 50% 100%,
-            rgba(24, 38, 65, 0.25),
-            transparent 45%
-        ),
-        #080b12;
-}
-
-
-/* =====================================================
-   HERO CONTENT
-===================================================== */
-
-.hero-content {
-    width: 100%;
-    max-width: 950px;
-
-    margin: auto;
-
-    position: relative;
-    z-index: 2;
-}
-
-
-/* =====================================================
-   WELCOME TEXT
-===================================================== */
-
-.hero .welcome,
-.hero .subtitle-top {
-    color: var(--lavender-light);
-
-    font-size: 16px;
-
-    font-weight: 600;
-
-    letter-spacing: 5px;
-
-    text-transform: uppercase;
-
-    margin-bottom: 25px;
-}
-
-
-/* =====================================================
-   HI I'M
-===================================================== */
-
-.hero h1 {
-    font-family: "Playfair Display", serif;
-
-    color: var(--white);
-
-    font-size: clamp(55px, 8vw, 100px);
-
-    line-height: 1.05;
-
-    font-weight: 700;
-
-    margin-bottom: 25px;
-
-    letter-spacing: -2px;
-}
-
-.hero h1 span {
-    color: var(--lavender);
-}
-
-
-/* =====================================================
-   NAME
-===================================================== */
-
-.hero .name {
-    font-family: "Playfair Display", serif;
-
-    color: var(--lavender-light);
-
-    font-size: clamp(38px, 6vw, 72px);
-
-    font-weight: 600;
-
-    line-height: 1.1;
-
-    letter-spacing: 3px;
-
-    margin-bottom: 30px;
-
-    text-transform: uppercase;
-}
-
-
-/* =====================================================
-   DESCRIPTION
-===================================================== */
-
-.hero p {
-    max-width: 720px;
-
-    margin: 0 auto;
-
-    color: var(--muted);
-
-    font-size: 19px;
-
-    line-height: 1.8;
-
-    font-weight: 400;
-}
-
-
-/* =====================================================
-   BUTTON AREA
-===================================================== */
-
-.hero-buttons {
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    gap: 18px;
-
-    flex-wrap: wrap;
-
-    margin-top: 40px;
-}
-
-
-/* =====================================================
-   BUTTON
-===================================================== */
-
-.btn {
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    min-width: 170px;
-
-    padding: 14px 28px;
-
-    border-radius: 10px;
-
-    border: 1px solid var(--border);
-
-    text-decoration: none;
-
-    font-size: 16px;
-
-    font-weight: 600;
-
-    color: var(--white);
-
-    background: var(--navy-3);
-
-    transition: all 0.3s ease;
-
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-}
-
-
-/* Primary button */
-
-.btn-primary {
-    background: var(--lavender);
-
-    color: #10131c;
-
-    border-color: var(--lavender);
-}
-
-.btn-primary:hover {
-    background: var(--lavender-light);
-
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 12px 30px rgba(183, 155, 221, 0.25
