@@ -1,13 +1,14 @@
-/* =========================================================
-   Ꮶꭺꮇꭼꮪꮋꮋ Ꮩ — PREMIUM NAVY BLUE PORTFOLIO
-   ========================================================= */
+/* =====================================================
+   KAMESHH V — PROFESSIONAL PORTFOLIO
+   Navy + Lavender Premium Design
+===================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
 
 
-/* =========================
+/* =====================================================
    RESET
-========================= */
+===================================================== */
 
 * {
     margin: 0;
@@ -21,43 +22,276 @@ html {
 }
 
 body {
-    font-family: "Inter", sans-serif;
-
-    background:
-        radial-gradient(
-            circle at 80% 10%,
-            rgba(37, 99, 235, 0.12),
-            transparent 30%
-        ),
-        linear-gradient(
-            135deg,
-            #020817 0%,
-            #06152f 50%,
-            #020817 100%
-        );
-
-    color: #f8fafc;
+    font-family: "DM Sans", sans-serif;
+    background: #f7f5fb;
+    color: #171b29;
     line-height: 1.6;
-
-    overflow-x: hidden;
 }
 
 
-/* =========================
-   COLORS
-========================= */
+/* =====================================================
+   COLOR VARIABLES
+===================================================== */
 
 :root {
-    --navy-dark: #020817;
-    --navy: #06152f;
-    --navy-light: #0a2144;
+    --navy: #0b1220;
+    --navy-light: #111b2e;
+    --navy-soft: #18243a;
 
-    --blue: #2563eb;
-    --blue-light: #60a5fa;
-    --blue-soft: #93c5fd;
+    --purple: #8d6cc3;
+    --purple-dark: #7252a8;
+    --purple-light: #b79bdd;
 
-    --white: #f8fafc;
-    --text: #cbd5e1;
-    --muted: #94a3b8;
+    --white: #ffffff;
+    --light: #f7f5fb;
+    --text: #252536;
+    --muted: #777589;
 
-    --border: rgba(96, 165, 250, 0.20
+    --border: rgba(141, 108, 195, 0.22);
+
+    --shadow:
+        0 15px 45px rgba(11, 18, 32, 0.10);
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(11, 18, 32, 0.96);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+nav {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: auto;
+
+    min-height: 78px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* Logo / Name */
+
+.logo,
+nav h1,
+nav .logo {
+    font-family: "Playfair Display", serif;
+
+    font-size: 30px;
+    font-weight: 700;
+
+    color: white;
+
+    letter-spacing: 1px;
+
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--purple-light);
+}
+
+
+/* Navigation Links */
+
+nav ul {
+    display: flex;
+    align-items: center;
+
+    gap: 35px;
+
+    list-style: none;
+}
+
+nav ul li a {
+    position: relative;
+
+    color: #e9e9ee;
+
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    transition: 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--purple-light);
+}
+
+
+/* Underline animation */
+
+nav ul li a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--purple-light);
+
+    transition: 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+
+/* =====================================================
+   HERO SECTION
+===================================================== */
+
+.hero {
+    min-height: calc(100vh - 78px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 80px 7%;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(141, 108, 195, 0.12),
+            transparent 35%
+        ),
+        #f7f5fb;
+
+    text-align: center;
+}
+
+
+/* Hero container */
+
+.hero-content {
+    width: 100%;
+    max-width: 900px;
+
+    margin: auto;
+}
+
+
+/* Small heading */
+
+.hero .welcome,
+.hero .subtitle-top {
+    font-size: 16px;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+
+    color: var(--purple-dark);
+
+    margin-bottom: 20px;
+
+    font-weight: 600;
+}
+
+
+/* Main heading */
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(55px, 9vw, 100px);
+
+    line-height: 1.05;
+
+    color: var(--navy);
+
+    margin-bottom: 20px;
+
+    font-weight: 700;
+}
+
+.hero h1 span {
+    color: var(--purple);
+}
+
+
+/* Name */
+
+.hero .name {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(38px, 6vw, 70px);
+
+    color: var(--navy);
+
+    letter-spacing: 2px;
+
+    margin-bottom: 25px;
+}
+
+
+/* Description */
+
+.hero p {
+    max-width: 700px;
+
+    margin: 0 auto 35px;
+
+    color: var(--muted);
+
+    font-size: 19px;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.hero-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    flex-wrap: wrap;
+
+    margin-top: 35px;
+}
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 170px;
+
+    padding: 15px 28px;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    transition: 0.3s ease
