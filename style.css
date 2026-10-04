@@ -1,8 +1,8 @@
 /* =========================================
-   PREMIUM MODERN PORTFOLIO
+   PROFESSIONAL MANGA-INSPIRED PORTFOLIO
 ========================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap');
 
 * {
     margin: 0;
@@ -12,229 +12,206 @@
 }
 
 :root {
-    --black: #080808;
-    --dark: #111111;
-    --dark-card: #171717;
-    --white: #ffffff;
-    --text: #e8e8e8;
-    --muted: #9b9b9b;
-    --gold: #d4af37;
-
-    --border: rgba(255,255,255,0.12);
-    --shadow: 0 20px 50px rgba(0,0,0,0.35);
+    --bg: #08090b;
+    --bg-soft: #101216;
+    --card: #13161b;
+    --white: #f5f5f5;
+    --text: #d0d3d6;
+    --muted: #858a91;
+    --line: #292d33;
+    --accent: #e63946;
 }
 
 body {
     font-family: 'Inter', sans-serif;
-    background: var(--black);
+    background: var(--bg);
     color: var(--white);
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
-
 /* =========================================
-   HEADER
+   NAVBAR
 ========================================= */
 
 header {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
     z-index: 1000;
-
-    background: rgba(8,8,8,0.92);
+    background: rgba(8, 9, 11, 0.92);
     backdrop-filter: blur(15px);
-
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--line);
 }
 
-.navbar {
+nav {
     max-width: 1200px;
     margin: auto;
-
-    padding: 20px 30px;
+    min-height: 78px;
+    padding: 0 25px;
 
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 }
-
-
-/* =========================================
-   LOGO
-========================================= */
 
 .logo {
-    font-family: 'DM Serif Display', serif;
-
     color: var(--white);
-
+    text-decoration: none;
+    font-family: 'DM Serif Display', serif;
     font-size: 28px;
-
-    text-decoration: none;
-
     letter-spacing: 1px;
-
-    transition: 0.3s;
 }
 
-.logo:hover {
-    color: var(--gold);
+.logo span {
+    color: var(--accent);
 }
 
-
-/* =========================================
-   NAVIGATION
-========================================= */
-
-.nav-links {
-    list-style: none;
-
+nav ul {
     display: flex;
-    gap: 32px;
+    align-items: center;
+    gap: 35px;
+    list-style: none;
 }
 
-.nav-links a {
-    color: #cccccc;
-
+nav ul li a {
+    color: var(--text);
     text-decoration: none;
-
-    font-size: 14px;
-
+    font-size: 15px;
     font-weight: 500;
-
-    transition: 0.3s;
+    position: relative;
+    transition: 0.3s ease;
 }
 
-.nav-links a:hover {
-    color: var(--gold);
+nav ul li a:hover {
+    color: var(--white);
 }
 
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
 
 /* =========================================
    HERO
 ========================================= */
 
 .hero {
-    min-height: 90vh;
-
+    min-height: 100vh;
     max-width: 1200px;
     margin: auto;
-
-    padding: 100px 30px;
+    padding: 150px 25px 80px;
 
     display: flex;
-    justify-content: center;
     align-items: center;
-
-    text-align: center;
-
-    position: relative;
+    justify-content: space-between;
+    gap: 70px;
 }
-
-
-/* Subtle glow */
-
-.hero::before {
-    content: "";
-
-    position: absolute;
-
-    width: 450px;
-    height: 450px;
-
-    background: rgba(212,175,55,0.08);
-
-    border-radius: 50%;
-
-    filter: blur(100px);
-
-    z-index: -1;
-}
-
-
-/* =========================================
-   HERO CONTENT
-========================================= */
 
 .hero-content {
-    max-width: 850px;
+    max-width: 650px;
+}
+
+.hero-content::before {
+    content: "WELCOME TO MY PORTFOLIO";
+    display: inline-block;
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
 }
 
 .hero h1 {
     font-family: 'DM Serif Display', serif;
-
-    font-size: clamp(48px, 8vw, 90px);
-
-    font-weight: 400;
-
-    line-height: 1.05;
-
-    margin-bottom: 20px;
+    font-size: clamp(55px, 8vw, 95px);
+    line-height: 0.95;
+    margin-bottom: 25px;
 }
 
 .hero h1 span {
-    color: var(--gold);
+    display: block;
+    color: var(--accent);
 }
 
 .hero p {
-    color: var(--muted);
-
+    max-width: 600px;
+    color: var(--text);
     font-size: 18px;
-
-    max-width: 650px;
-
-    margin: 0 auto 35px;
+    margin-bottom: 35px;
 }
 
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.hero-buttons a {
+    text-decoration: none;
+    padding: 13px 25px;
+    border: 1px solid var(--line);
+    color: var(--white);
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.hero-buttons a:first-child {
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+.hero-buttons a:hover {
+    transform: translateY(-3px);
+}
 
 /* =========================================
-   BUTTONS
+   MANGA ACCENT
 ========================================= */
 
-.btn {
-    display: inline-block;
-
-    padding: 13px 28px;
-
-    margin: 6px;
-
-    border-radius: 5px;
-
-    text-decoration: none;
-
-    font-weight: 600;
-
-    font-size: 14px;
-
-    transition: 0.3s;
+.hero-image {
+    width: 350px;
+    height: 440px;
+    border: 1px solid var(--line);
+    position: relative;
+    background:
+        linear-gradient(135deg, transparent 45%, rgba(230,57,70,.18)),
+        var(--card);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.btn-primary {
-    background: var(--gold);
-
-    color: #000;
+.hero-image::before {
+    content: "01";
+    position: absolute;
+    top: -18px;
+    left: -18px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 60px;
+    color: var(--accent);
 }
 
-.btn-primary:hover {
-    transform: translateY(-3px);
-
-    box-shadow: 0 10px 25px rgba(212,175,55,0.25);
+.hero-image::after {
+    content: "KAMESHH V";
+    position: absolute;
+    bottom: 18px;
+    right: -35px;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 3px;
+    writing-mode: vertical-rl;
+    color: var(--muted);
 }
-
-.btn-outline {
-    border: 1px solid var(--border);
-
-    color: var(--white);
-
-    background: transparent;
-}
-
-.btn-outline:hover {
-    border-color: var(--gold);
-
-    color: var(--gold);
-}
-
 
 /* =========================================
    SECTIONS
@@ -242,157 +219,147 @@ header {
 
 section {
     max-width: 1200px;
-
     margin: auto;
-
-    padding: 100px 30px;
-}
-
-section h2 {
-    font-family: 'DM Serif Display', serif;
-
-    font-size: 45px;
-
-    font-weight: 400;
-
-    margin-bottom: 15px;
+    padding: 100px 25px;
 }
 
 .section-title {
-    color: var(--gold);
-
-    font-size: 13px;
-
-    text-transform: uppercase;
-
-    letter-spacing: 3px;
-
-    font-weight: 700;
-
-    margin-bottom: 8px;
+    margin-bottom: 45px;
 }
 
+.section-title small {
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.section-title h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 52px;
+    margin-top: 8px;
+}
 
 /* =========================================
    ABOUT
 ========================================= */
 
 .about {
+    border-top: 1px solid var(--line);
+}
+
+.about-content {
     display: grid;
-
     grid-template-columns: 1fr 1fr;
-
     gap: 60px;
-
-    align-items: center;
 }
 
-.about p {
-    color: var(--muted);
-
-    font-size: 16px;
+.about-content p {
+    color: var(--text);
+    font-size: 17px;
 }
 
+.about-card {
+    border: 1px solid var(--line);
+    background: var(--card);
+    padding: 35px;
+    position: relative;
+}
+
+.about-card::before {
+    content: "MANGA NOTE";
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    padding: 0 10px;
+    background: var(--bg);
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
 
 /* =========================================
    SKILLS
 ========================================= */
 
-.skills {
+.skills-grid {
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
-
     gap: 20px;
 }
 
 .skill-card {
-    background: var(--dark-card);
-
-    border: 1px solid var(--border);
-
+    background: var(--card);
+    border: 1px solid var(--line);
     padding: 30px;
-
-    border-radius: 10px;
-
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .skill-card:hover {
     transform: translateY(-7px);
-
-    border-color: var(--gold);
-
-    box-shadow: var(--shadow);
+    border-color: var(--accent);
 }
 
 .skill-card h3 {
+    font-size: 20px;
     margin-bottom: 8px;
-
-    font-size: 18px;
 }
 
 .skill-card p {
     color: var(--muted);
-
     font-size: 14px;
 }
-
 
 /* =========================================
    PROJECTS
 ========================================= */
 
-.projects {
+.projects-grid {
     display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
+    grid-template-columns: repeat(3, 1fr);
     gap: 25px;
 }
 
 .project-card {
-    background: var(--dark-card);
-
-    border: 1px solid var(--border);
-
-    padding: 35px;
-
-    border-radius: 10px;
-
-    transition: 0.3s;
+    background: var(--card);
+    border: 1px solid var(--line);
+    overflow: hidden;
+    transition: 0.3s ease;
 }
 
 .project-card:hover {
     transform: translateY(-8px);
-
-    border-color: var(--gold);
-
-    box-shadow: var(--shadow);
+    border-color: var(--accent);
 }
 
-.project-card h3 {
-    font-size: 22px;
-
-    margin-bottom: 10px;
+.project-image {
+    height: 190px;
+    background: #1a1d22;
+    border-bottom: 1px solid var(--line);
 }
 
-.project-card p {
+.project-content {
+    padding: 25px;
+}
+
+.project-content h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.project-content p {
     color: var(--muted);
-
-    margin-bottom: 20px;
-}
-
-.project-card a {
-    color: var(--gold);
-
-    text-decoration: none;
-
-    font-weight: 600;
-
     font-size: 14px;
 }
 
+.project-content a {
+    display: inline-block;
+    margin-top: 18px;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 700;
+}
 
 /* =========================================
    CONTACT
@@ -400,91 +367,148 @@ section h2 {
 
 .contact {
     text-align: center;
+    border-top: 1px solid var(--line);
+}
 
-    border-top: 1px solid var(--border);
+.contact h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 55px;
 }
 
 .contact p {
     color: var(--muted);
-
-    margin-bottom: 25px;
+    margin: 15px auto 30px;
 }
 
-.contact a {
-    color: var(--gold);
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
 
+.contact-links a {
     text-decoration: none;
+    color: var(--white);
+    border: 1px solid var(--line);
+    padding: 12px 25px;
+    transition: 0.3s ease;
 }
 
+.contact-links a:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+}
 
 /* =========================================
    FOOTER
 ========================================= */
 
 footer {
+    border-top: 1px solid var(--line);
     text-align: center;
-
-    padding: 30px;
-
-    color: #777;
-
-    border-top: 1px solid var(--border);
-
+    padding: 25px;
+    color: var(--muted);
     font-size: 13px;
 }
 
-
 /* =========================================
-   RESPONSIVE
+   MOBILE
 ========================================= */
 
-@media (max-width: 768px) {
+@media (max-width: 850px) {
 
-    .navbar {
-        padding: 16px 20px;
+    nav {
+        min-height: 70px;
     }
 
-    .nav-links {
+    nav ul {
         gap: 15px;
     }
 
-    .nav-links a {
-        font-size: 12px;
+    nav ul li a {
+        font-size: 13px;
     }
 
     .hero {
-        min-height: 80vh;
+        flex-direction: column;
+        text-align: center;
+        padding-top: 130px;
+    }
 
-        padding: 70px 20px;
+    .hero-content {
+        max-width: 700px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-image {
+        width: 280px;
+        height: 350px;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-grid,
+    .projects-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+
+    nav {
+        padding: 0 18px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    nav ul {
+        gap: 12px;
+    }
+
+    nav ul li a {
+        font-size: 11px;
+    }
+
+    .hero {
+        padding: 120px 20px 60px;
     }
 
     .hero h1 {
-        font-size: 48px;
+        font-size: 58px;
     }
 
     .hero p {
         font-size: 15px;
     }
 
+    .hero-image {
+        width: 240px;
+        height: 300px;
+    }
+
     section {
-        padding: 70px 20px;
+        padding: 75px 20px;
     }
 
-    section h2 {
-        font-size: 36px;
+    .section-title h2,
+    .contact h2 {
+        font-size: 40px;
     }
 
-    .about {
-        grid-template-columns: 1fr;
-
-        gap: 30px;
-    }
-
-    .skills {
+    .skills-grid,
+    .projects-grid {
         grid-template-columns: 1fr;
     }
 
-    .projects {
-        grid-template-columns: 1fr;
+    .about-card {
+        padding: 25px;
     }
 }
